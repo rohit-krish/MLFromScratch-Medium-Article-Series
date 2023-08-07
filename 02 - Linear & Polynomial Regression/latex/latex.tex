@@ -74,27 +74,28 @@
 
 
 \begin{align*}
-    \text{You can rewrite MSE as}                                                                  \\
-    MSE                           & = \frac{1}{n} \sum_{i = 1}^{n} (y_i - (m \, x_i + b))^2        \\
-    \text{let, } f(m, b)          & = (y_i - (m \, x_i + b))^2                                     \\
-    \text{Partial derivatives,}                                                                    \\
-    \text{let, }  g(m, b)         & = y_i - (m x_i + b)                                            \\
-    \text{so, } f(m, b)           & = g(m, b)^2                                                    \\
-    \frac{\partial f}{\partial m} & = 2 \, g(m, b) \, g^\prime                                     \\
-    \text{now, } g^\prime         & = \frac{\partial g}{\partial m} = 0 - (1\, x_i + 0)            \\
-                                  & = -\, x_i                                                      \\
-    \text{expanding, }                                                                             \\
-    \frac{\partial f}{\partial m} & = 2 \, (y_i - (m\, x_i + b))^2 \, \cdot (-x_i)                 \\
-                                  & = -2\, x_i \cdot (y_i - (m\, x_i + b))                         \\
-    \text{now, }                                                                                   \\
-    \frac{\partial f}{\partial b} & = 2 \, g(m, b)\, g^\prime                                      \\
-    \text{now, } g^\prime         & = \frac{\partial f}{\partial b} = 0 - (0\cdot 0 + 1) = -1      \\
-    \text{expanding, }                                                                             \\
-    \frac{\partial f}{\partial b} & = 2 \cdot (y_i - (m\,x_i + b))^2 \cdot -1                      \\
-                                  & = -2\, (y_i - (m\,x_i + b))                                    \\ \\
-    \text{Final answer, }                                                                          \\
-    \frac{\partial}{\partial m}   & = \frac{2}{n} \, \sum_{i = 1}^{n} \, -x_i (y_i - (m\,x_i + b)) \\
-    \frac{\partial}{\partial b}   & = \frac{2}{n} \, \sum_{i = 1}^{n} \, -(y_i - (m\,x_i + b))
+    \text{You can rewrite MSE as}                                                                               \\
+    MSE                                        & = \frac{1}{n} \sum_{i = 1}^{n} (y_i - (m \, x_i + b))^2        \\
+    \text{let, } f(m, b)                       & = (y_i - (m \, x_i + b))^2                                     \\
+    \text{let, }  g(m, b)                      & = y_i - (m x_i + b)                                            \\
+    \text{so, } f(m, b)                        & = g(m, b)^2                                                    \\
+    \text{Partial derivative w.r.t m,}                                                                          \\
+    \frac{\partial f}{\partial m}              & = 2 \, g(m, b) \cdot  \frac{\partial g}{\partial m}            \\
+    \text{now, } \frac{\partial g}{\partial m} & = 0 - (1\, x_i + 0)                                            \\
+                                               & = -\, x_i                                                      \\
+    \text{expanding, }                                                                                          \\
+    \frac{\partial f}{\partial m}              & = 2 \, (y_i - (m\, x_i + b)) \, \cdot (-x_i)                   \\
+                                               & = -2\, x_i \cdot (y_i - (m\, x_i + b))                         \\
+    \text{Partial derivative w.r.t b,}                                                                          \\
+    \frac{\partial f}{\partial b}              & = 2 \, g(m, b) \cdot \frac{\partial g}{\partial b}                 \\
+    \text{now, } \frac{\partial g}{\partial b} & = 0 - (0\cdot 0 + 1)                                           \\
+                                               & = -1                                                           \\
+    \text{expanding, }                                                                                          \\
+    \frac{\partial f}{\partial b}              & = 2 \cdot (y_i - (m\,x_i + b))^2 \cdot -1                      \\
+                                               & = -2\, (y_i - (m\,x_i + b))                                    \\ \\
+    \text{Final answer, }                                                                                       \\
+    \frac{\partial}{\partial m}                & = \frac{2}{n} \, \sum_{i = 1}^{n} \, -x_i (y_i - (m\,x_i + b)) \\
+    \frac{\partial}{\partial b}                & = \frac{2}{n} \, \sum_{i = 1}^{n} \, -(y_i - (m\,x_i + b))
 \end{align*}
 
 \end{document}
